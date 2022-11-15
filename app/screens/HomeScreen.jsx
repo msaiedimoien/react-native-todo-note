@@ -1,39 +1,31 @@
 import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
 import Footer from "../components/Footer";
-import Constants from "expo-constants";
+import Header from "../components/Header";
+import {Box, Flex, NativeBaseProvider} from "native-base";
+
+const LinearGradient = require('expo-linear-gradient').LinearGradient;
 
 const HomeScreen = () => {
   return (
-    <View style={{flex: 1}}>
-        <View style={styles.header}>
-            <Text>Header</Text>
-        </View>
-        <View style={styles.body}>
-            <Text>Body</Text>
-        </View>
-        <View style={styles.footer}>
-            <Footer />
-        </View>
-    </View>
+      <NativeBaseProvider config={config}>
+          <Flex flex={1} justify="space-between" safeAreaTop bg={{
+              linearGradient: {
+                  colors: ['primary.100', 'primary.500', "primary.400"],
+                  start: [0, 0.9],
+                  end: [1, 0.7]
+              }
+          }}>
+              <Header title="Tasks" />
+              <Footer />
+          </Flex>
+      </NativeBaseProvider>
   );
 };
 
-const styles = StyleSheet.create({
-    header: {
-        paddingTop: Constants.statusBarHeight+5,
-        backgroundColor: 'skyblue',
-        height: 65 + Constants.statusBarHeight,
-    },
-    body: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    footer: {
-        // backgroundColor: 'skyblue',
-        height: 60,
+const config = {
+    dependencies: {
+        'linear-gradient': LinearGradient
     }
-});
+};
 
 export default HomeScreen;
