@@ -14,7 +14,7 @@ const App = () => {
         <NativeBaseProvider>
             <NavigationContainer>
                 <Stack.Navigator>
-                    <Stack.Screen name='Home' component={HomeScreen} />
+                    <Stack.Screen name='Home' component={HomeScreen} options={{headerShown: false}} />
                     <Stack.Screen name='ToDo' component={ToDoListScreen} />
                     <Stack.Screen name='Note' component={NoteListScreen} />
                     <Stack.Screen name='Account' component={AccountScreen} />

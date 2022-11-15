@@ -17,9 +17,11 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo/vector-icons": "^13.0.0",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.1",
     "expo": "^47.0.0",
+    "expo-constants": "~14.0.2",
     "expo-status-bar": "~1.4.2",
     "native-base": "3.4.0",
     "react": "18.1.0",
