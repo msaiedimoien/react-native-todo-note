@@ -1,7 +1,9 @@
 import React from 'react';
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import {Box, Flex, NativeBaseProvider} from "native-base";
+import {Flex, NativeBaseProvider} from "native-base";
+import NotesScreen from "./NotesScreen";
+import TasksScreen from "./TasksScreen";
 
 const LinearGradient = require('expo-linear-gradient').LinearGradient;
 
@@ -16,6 +18,7 @@ const HomeScreen = () => {
               }
           }}>
               <Header title="Tasks" />
+              <TasksScreen />
               <Footer />
           </Flex>
       </NativeBaseProvider>
