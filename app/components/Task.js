@@ -41,10 +41,11 @@ const Task = ({ item }) => {
                     <Spacer/>
                     <VStack justifyContent="space-around">
                         <Pressable alignSelf="center" onPress={() => setShowCompletedModal(true)}>
-                            <Icon color="primary.700" size="lg" as={<MaterialIcons name={item.isCompleted ? "check-box" : "check-box-outline-blank"}/>} />
+                            <Icon color="primary.700" size="lg" as={<MaterialIcons
+                                name={item.isCompleted ? "check-box" : "check-box-outline-blank"}/>}/>
                         </Pressable>
                         <Pressable alignSelf="center" onPress={() => setShowEditModal(true)}>
-                            <Icon color="info.600" size="lg" as={<MaterialIcons name="edit"/>} />
+                            <Icon color="info.600" size="lg" as={<MaterialIcons name="edit"/>}/>
                         </Pressable>
                     </VStack>
                 </HStack>
@@ -57,16 +58,16 @@ const Task = ({ item }) => {
                     <Modal.Body>
                         <FormControl>
                             <FormControl.Label>Title:</FormControl.Label>
-                            <Input/>
+                            <Input value={item.title} />
                         </FormControl>
                         <FormControl>
                             <FormControl.Label>Description:</FormControl.Label>
-                            <TextArea/>
+                            <TextArea value={item.description}/>
                         </FormControl>
-                        <FormControl mb={2}>
+                        <FormControl>
                             <FormControl.Label>Category:</FormControl.Label>
-                            <Radio.Group name="category">
-                                <HStack space={4}>
+                            <Radio.Group name="category" defaultValue={item.category}>
+                                <HStack space={3}>
                                     <Radio size="lg" value="person-pin" colorScheme="success"
                                            icon={<Icon as={<MaterialIcons name="person-pin"/>}/>}>Personal</Radio>
                                     <Radio size="lg" value="miscellaneous-services" colorScheme="danger" icon={<Icon
@@ -76,14 +77,14 @@ const Task = ({ item }) => {
                                 </HStack>
                             </Radio.Group>
                         </FormControl>
-                        <Modal.Footer>
-                            <Button.Group space="sm">
-                                <Button variant="ghost" colorScheme="blueGray"
-                                        onPress={() => setShowEditModal(false)}>Cancel</Button>
-                                <Button onPress={() => setShowEditModal(false)}>Save</Button>
-                            </Button.Group>
-                        </Modal.Footer>
                     </Modal.Body>
+                    <Modal.Footer>
+                        <Button.Group space="sm">
+                            <Button variant="ghost" colorScheme="blueGray"
+                                    onPress={() => setShowEditModal(false)}>Cancel</Button>
+                            <Button onPress={() => setShowEditModal(false)}>Save</Button>
+                        </Button.Group>
+                    </Modal.Footer>
                 </Modal.Content>
             </Modal>
 
@@ -93,20 +94,20 @@ const Task = ({ item }) => {
                     <Modal.Header>Complete the task</Modal.Header>
                     <Modal.Body>
                         <FormControl>
-                            <Checkbox value="isCompleted" shadow={2}>The task is completed!</Checkbox>
+                            <Checkbox value={item.isCompleted} defaultIsChecked={item.isCompleted} shadow={2}>The task is completed!</Checkbox>
                         </FormControl>
                         <FormControl>
                             <FormControl.Label>Description:</FormControl.Label>
-                            <TextArea/>
+                            <TextArea value={item.memoCompleted} />
                         </FormControl>
-                        <Modal.Footer>
-                            <Button.Group space="sm">
-                                <Button variant="ghost" colorScheme="blueGray"
-                                        onPress={() => setShowCompletedModal(false)}>Cancel</Button>
-                                <Button onPress={() => setShowCompletedModal(false)}>Save</Button>
-                            </Button.Group>
-                        </Modal.Footer>
                     </Modal.Body>
+                    <Modal.Footer>
+                        <Button.Group space="sm">
+                            <Button variant="ghost" colorScheme="blueGray"
+                                    onPress={() => setShowCompletedModal(false)}>Cancel</Button>
+                            <Button onPress={() => setShowCompletedModal(false)}>Save</Button>
+                        </Button.Group>
+                    </Modal.Footer>
                 </Modal.Content>
             </Modal>
         </>
