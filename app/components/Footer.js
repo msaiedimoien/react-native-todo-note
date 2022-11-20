@@ -6,7 +6,7 @@ const Footer = () => {
     const [selected, setSelected] = useState(0);
 
     return (
-        <Box m={5}>
+        <Box mt={2} mb={5} mx={5}>
             <HStack bg='primary.900' rounded={50} shadow={5}>
                 <Pressable mb={1} cursor="pointer" opacity={selected === 2 ? 1 : 0.5} py={3} flex={1}
                            onPress={() => setSelected(2)}>

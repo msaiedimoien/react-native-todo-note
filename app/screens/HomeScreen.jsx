@@ -12,7 +12,7 @@ const HomeScreen = () => {
       <NativeBaseProvider config={config}>
           <Flex flex={1} justify="space-between" safeAreaTop bg={{
               linearGradient: {
-                  colors: ['primary.100', 'primary.500', "primary.400"],
+                  colors: ['primary.50', 'primary.200', "primary.300"],
                   start: [0, 0.9],
                   end: [1, 0.7]
               }
