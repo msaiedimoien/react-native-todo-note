@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList } from "native-base";
-import Task from "../components/Task";
+import Task from "../components/task/Task";
 
 const TasksScreen = () => {
     const tasks = [

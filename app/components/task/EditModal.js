@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Button, FormControl, HStack, Icon, Input, Modal, Radio, TextArea} from "native-base";
 import {MaterialIcons} from "@expo/vector-icons";
 
-const editModal = ( showEditModal, setShowEditModal ) => {
-   const {showEditModal, setShowEditModal} = useState(false);
+const EditModal = ({ showEditModal, setShowEditModal, item }) => {
 
   return (
       <Modal isOpen={showEditModal} onClose={() => setShowEditModal(false)}>
@@ -13,15 +12,15 @@ const editModal = ( showEditModal, setShowEditModal ) => {
           <Modal.Body>
             <FormControl>
               <FormControl.Label>Title:</FormControl.Label>
-              <Input/>
+              <Input value={item.title} />
             </FormControl>
             <FormControl>
               <FormControl.Label>Description:</FormControl.Label>
-              <TextArea/>
+              <TextArea value={item.description}/>
             </FormControl>
             <FormControl>
               <FormControl.Label>Category:</FormControl.Label>
-              <Radio.Group name="category">
+              <Radio.Group name="category" defaultValue={item.category}>
                 <HStack space={3}>
                   <Radio size="lg" value="person-pin" colorScheme="success"
                          icon={<Icon as={<MaterialIcons name="person-pin"/>}/>}>Personal</Radio>
@@ -45,4 +44,4 @@ const editModal = ( showEditModal, setShowEditModal ) => {
   );
 };
 
-export default editModal;
+export default EditModal;
