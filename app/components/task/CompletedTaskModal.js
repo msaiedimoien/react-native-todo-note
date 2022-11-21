@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Checkbox, FormControl, Modal, TextArea} from "native-base";
 
-const CompletedModal = ({ showCompletedModal, setShowCompletedModal, item }) => {
+const CompletedTaskModal = ({ showCompletedModal, setShowCompletedModal, item }) => {
   return (
       <Modal isOpen={showCompletedModal} onClose={() => setShowCompletedModal(false)}>
           <Modal.Content width="350px">
@@ -28,4 +28,4 @@ const CompletedModal = ({ showCompletedModal, setShowCompletedModal, item }) => 
   );
 };
 
-export default CompletedModal;
+export default CompletedTaskModal;

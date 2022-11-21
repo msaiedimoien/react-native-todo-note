@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, FormControl, HStack, Icon, Input, Modal, Radio, TextArea} from "native-base";
 import {MaterialIcons} from "@expo/vector-icons";
 
-const EditModal = ({ showEditModal, setShowEditModal, item }) => {
+const EditTaskModal = ({ showEditModal, setShowEditModal, item }) => {
 
   return (
       <Modal isOpen={showEditModal} onClose={() => setShowEditModal(false)}>
@@ -44,4 +44,4 @@ const EditModal = ({ showEditModal, setShowEditModal, item }) => {
   );
 };
 
-export default EditModal;
+export default EditTaskModal;

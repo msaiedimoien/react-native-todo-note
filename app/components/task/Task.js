@@ -1,22 +1,17 @@
 import React, {useState} from 'react';
 import {
-    Box, Button,
+    Box,
     Center,
-    FormControl,
     HStack,
     Icon,
-    Input,
-    Modal,
     Pressable,
     Spacer,
     Text,
-    TextArea,
-    VStack,
-    Radio, Checkbox
+    VStack
 } from "native-base";
 import {MaterialIcons} from "@expo/vector-icons";
-import EditModal from "./EditModal";
-import CompletedModal from "./CompletedModal";
+import EditTaskModal from "./EditTaskModal";
+import CompletedTaskModal from "./CompletedTaskModal";
 
 const Task = ({ item }) => {
     const [showCompletedModal, setShowCompletedModal] = useState(false);
@@ -53,9 +48,9 @@ const Task = ({ item }) => {
                 </HStack>
             </Box>
 
-            <EditModal showEditModal={showEditModal} setShowEditModal={setShowEditModal} item={item}/>
-            <CompletedModal showCompletedModal={showCompletedModal} setShowCompletedModal={setShowCompletedModal}
-                            item={item}/>
+            <EditTaskModal showEditModal={showEditModal} setShowEditModal={setShowEditModal} item={item}/>
+            <CompletedTaskModal showCompletedModal={showCompletedModal} setShowCompletedModal={setShowCompletedModal}
+                                item={item}/>
         </>
     );
 };
