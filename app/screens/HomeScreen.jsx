@@ -19,10 +19,21 @@ const HomeScreen = () => {
                     end: [1, 0.7]
                 }
             }}>
-                <Header title="Tasks"/>
                 {
-                    body === "tasks" ? <TasksScreen/>
-                        : (body === "notes" ? <NotesScreen /> : <AccountScreen />)
+                    body === "tasks" ? <>
+                            <Header title="Tasks"/>
+                            <TasksScreen/>
+                        </>
+                        : (
+                            body === "notes" ? <>
+                                    <Header title="Notes"/>
+                                    <NotesScreen/>
+                                </>
+                                : <>
+                                    <Header title="Settings"/>
+                                    <AccountScreen/>
+                                </>
+                        )
                 }
                 <Footer setBody={setBody}/>
             </Flex>
