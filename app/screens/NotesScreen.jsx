@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, FlatList, Flex, Text, TextArea} from "native-base";
+import { FlatList } from "native-base";
 import Note from "../components/note/Note";
 
 const NotesScreen = () => {
