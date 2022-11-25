@@ -6,19 +6,21 @@ import TasksScreen from "./TasksScreen";
 import NotesScreen from "./NotesScreen";
 import AccountScreen from "./AccountScreen";
 import AddNoteModal from "../components/note/AddNoteModal";
+import AddTaskModal from "../components/task/AddTaskModal";
 
 const LinearGradient = require('expo-linear-gradient').LinearGradient;
 
 const HomeScreen = () => {
     const [body, setBody] = useState("tasks");
     const [showAddNote, setShowAddNote] = useState(false);
+    const [showAddTask, setShowAddTask] = useState(false);
 
     const addNote = () => {
         setShowAddNote(true);
     }
 
     const addTask = () => {
-      alert("add Task!");
+      setShowAddTask(true);
     }
 
     return (
@@ -49,6 +51,7 @@ const HomeScreen = () => {
                 <Footer setBody={setBody}/>
 
                 <AddNoteModal showAddNote={showAddNote} setShowAddNote={setShowAddNote} />
+                <AddTaskModal showAddTask={showAddTask} setShowAddTask={setShowAddTask} />
             </Flex>
         </NativeBaseProvider>
     );

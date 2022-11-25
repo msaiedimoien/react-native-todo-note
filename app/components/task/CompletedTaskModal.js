@@ -6,7 +6,7 @@ const CompletedTaskModal = ({ showCompletedModal, setShowCompletedModal, item })
       <Modal isOpen={showCompletedModal} onClose={() => setShowCompletedModal(false)}>
           <Modal.Content width="350px">
               <Modal.CloseButton/>
-              <Modal.Header>Complete the task</Modal.Header>
+              <Modal.Header bg="green.100">Complete the task</Modal.Header>
               <Modal.Body>
                   <FormControl>
                       <Checkbox value={item.isCompleted} defaultIsChecked={item.isCompleted} shadow={2}>The task is completed!</Checkbox>

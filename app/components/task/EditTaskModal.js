@@ -8,7 +8,7 @@ const EditTaskModal = ({ showEditModal, setShowEditModal, item }) => {
       <Modal isOpen={showEditModal} onClose={() => setShowEditModal(false)}>
         <Modal.Content width="350px">
           <Modal.CloseButton/>
-          <Modal.Header>Edit Task</Modal.Header>
+          <Modal.Header bg="green.100">Edit Task</Modal.Header>
           <Modal.Body>
             <FormControl>
               <FormControl.Label>Title:</FormControl.Label>
