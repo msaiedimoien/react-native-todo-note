@@ -7,21 +7,30 @@ const Header = ({ title, onPressAdd }) => {
     return (
         <Box bg="white" justifyContent="center" height={55} rounded={50} m={5} mb={2} shadow={6} px={4}>
             <HStack justifyContent="space-between" alignItems="center">
-                <Pressable>
-                    <Center bg="gray.500:alpha.20" rounded={50} p={1}>
-                        <Icon as={MaterialIcons} name="color-lens" size="lg" color="gray.100"/>
-                    </Center>
-                </Pressable>
+                {
+                    onPressAdd ? (
+                        <Pressable>
+                            <Center bg="gray.500:alpha.20" rounded={50} p={1}>
+                                <Icon as={MaterialIcons} name="color-lens" size="lg" color="gray.100"/>
+                            </Center>
+                        </Pressable>
+                    ) : null
+                }
                 <Spacer/>
 
                 <Heading color="primary.800">{title}</Heading>
 
                 <Spacer/>
-                <Pressable onPress={onPressAdd}>
-                    <Center bg="gray.500:alpha.20" rounded={50} p={1}>
-                        <Icon as={MaterialIcons} name="add" size="lg" color="red.500"/>
-                    </Center>
-                </Pressable>
+                {
+                    onPressAdd ? (
+                        <Pressable onPress={onPressAdd}>
+                            <Center bg="gray.500:alpha.20" rounded={50} p={1}>
+                                <Icon as={MaterialIcons} name="add" size="lg" color="red.500"/>
+                            </Center>
+                        </Pressable>
+                    ) : null
+                }
+
             </HStack>
         </Box>
     );
