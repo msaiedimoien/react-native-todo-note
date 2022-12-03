@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import {Button, Flex, FormControl, Input, Modal, NativeBaseProvider, TextArea} from "native-base";
 import TasksScreen from "./TasksScreen";
 import NotesScreen from "./NotesScreen";
-import AccountScreen from "./AccountScreen";
+import AboutScreen from "./AboutScreen";
 import AddNoteModal from "../components/note/AddNoteModal";
 import AddTaskModal from "../components/task/AddTaskModal";
 
@@ -44,7 +44,7 @@ const HomeScreen = () => {
                                 </>
                                 : <>
                                     <Header title="Settings"/>
-                                    <AccountScreen/>
+                                    <AboutScreen/>
                                 </>
                         )
                 }

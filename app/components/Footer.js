@@ -13,7 +13,7 @@ const Footer = ({ setBody }) => {
                     <Center>
                         <Icon mb={1} color="white" size="md"
                               as={<MaterialIcons name={selected === 2 ? "settings" : "settings"}/>}/>
-                        <Text color="white" fontSize={12}>Settings</Text>
+                        <Text color="white" fontSize={12}>About Me</Text>
                     </Center>
                 </Pressable>
                 <Pressable mb={1} cursor="pointer" opacity={selected === 1 ? 1 : 0.5} py={3} flex={1}
